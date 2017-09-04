@@ -35,7 +35,7 @@ class Skin
 	}
 	public function getPrice()
 	{
-		return $this->Price;
+		return $this->price;
 	}
 
 
