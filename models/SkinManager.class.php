@@ -12,7 +12,7 @@ class SkinManager
 	{
 		$sql = "SELECT * FROM skin";
 		$query = $this->dbh->prepare($sql);
-		$query->execute($id);
+		$query->execute();
 		$skins = $query->fetchAll(PDO::FETCH_CLASS, 'Skin');
 		return $skins;
 	}
@@ -21,7 +21,7 @@ class SkinManager
 	{
 		$sql = "SELECT * FROM skin WHERE id = ?";
 		$query = $this->dbh->prepare($sql);
-		$query->execute($id);
+		$query->execute([$id]);
 		$skin = $query->fetchObject('Skin');
 		return $skin;
 	}
@@ -30,7 +30,7 @@ class SkinManager
 	{
 		$sql = "SELECT * FROM skin WHERE id_collection = ?";
 		$query = $this->dbh->prepare($sql);
-		$query->execute($collection->getId());
+		$query->execute([$collection->getId()]);
 		$skins = $query->fetchAll(PDO::FETCH_CLASS, 'Skin');
 		return $skins;
 	}
@@ -39,25 +39,25 @@ class SkinManager
 	{
 		$sql = "SELECT * FROM skin WHERE id_type = ?";
 		$query = $this->dbh->prepare($sql);
-		$query->execute($type->getType());
+		$query->execute([$type->getId()]);
 		$skins = $query->fetchAll(PDO::FETCH_CLASS, 'Skin');
 		return $skins;
 	}
 
-	public function findByType(Weapon $weapon)// OBLIGATOIRE
+	public function findByWeapon(Weapon $weapon)// OBLIGATOIRE
 	{
 		$sql = "SELECT * FROM skin WHERE id_weapon = ?";
 		$query = $this->dbh->prepare($sql);
-		$query->execute($weapon->getId());
+		$query->execute([$weapon->getId()]);
 		$skins = $query->fetchAll(PDO::FETCH_CLASS, 'Skin');
 		return $skins;
 	}
 
-	public function findByType(Rarity $rarity)// OBLIGATOIRE
+	public function findByRarity(Rarity $rarity)// OBLIGATOIRE
 	{
 		$sql = "SELECT * FROM skin WHERE id_rarity = ?";
 		$query = $this->dbh->prepare($sql);
-		$query->execute($rarity->getId());
+		$query->execute([$rarity->getId()]);
 		$skins = $query->fetchAll(PDO::FETCH_CLASS, 'Skin');
 		return $skins;
 	}

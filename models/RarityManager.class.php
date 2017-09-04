@@ -12,7 +12,7 @@ class RarityManager
 	{
 		$sql = "SELECT * FROM rarity";
 		$query = $this->dbh->prepare($sql);
-		$query->execute($id);
+		$query->execute();
 		$raritys = $query->fetchAll(PDO::FETCH_CLASS, 'Rarity');
 		return $raritys;
 	}
@@ -21,7 +21,7 @@ class RarityManager
 	{
 		$sql = "SELECT * FROM rarity WHERE id = ?";
 		$query = $this->dbh->prepare($sql);
-		$query->execute($id);
+		$query->execute([$id]);
 		$rarity = $query->fetchObject('Rarity');
 		return $rarity;
 	}

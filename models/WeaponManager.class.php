@@ -12,7 +12,7 @@ class WeaponManager
 	{
 		$sql = "SELECT * FROM weapon";
 		$query = $this->dbh->prepare($sql);
-		$query->execute($id);
+		$query->execute();
 		$weapons = $query->fetchAll(PDO::FETCH_CLASS, 'Weapon');
 		return $weapons;
 	}
@@ -21,7 +21,7 @@ class WeaponManager
 	{
 		$sql = "SELECT * FROM weapon WHERE id = ?";
 		$query = $this->dbh->prepare($sql);
-		$query->execute($id);
+		$query->execute([$id]);
 		$weapon = $query->fetchObject('Weapon');
 		return $weapon;
 	}

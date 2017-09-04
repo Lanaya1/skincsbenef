@@ -12,7 +12,7 @@ class UserManager
 	{
 		$sql = "SELECT * FROM users";
 		$query = $this->dbh->prepare($sql);
-		$query->execute($id);
+		$query->execute();
 		$users = $query->fetchAll(PDO::FETCH_CLASS, 'User');
 		return $users;
 	}
@@ -21,7 +21,7 @@ class UserManager
 	{
 		$sql = "SELECT * FROM users WHERE id = ?";
 		$query = $this->dbh->prepare($sql);
-		$query->execute($id);
+		$query->execute([$id]);
 		$user = $query->fetchObject('User');
 		return $user;
 	}
@@ -30,26 +30,19 @@ class UserManager
 	{
 		$sql = "SELECT * FROM users WHERE nickname = ?";
 		$query = $this->dbh->prepare($sql);
-		$query->execute($nickname);
+		$query->execute([$nickname]);
 		$user = $query->fetchObject('User');
 		return $user;
 	}
 
-	public function create($nickname, $password, $mail)// CA DEPEND DU PROJET
+	public function create($nickname, $password, $mail)
 	{
-		/* Début de la faille spatio-temporelle */
 		$user = new User();
-		/*try
-		{*/
-			$user->setNickname($nickname);
-			$user->setPassword($password);
-			$user->setMail($mail);
-		/*}
-		catch (Exception $e)
-		{
-			$error = $e->getMessage();
-		}*/
-		/* Fin de la faille */
+
+		$user->setNickname($nickname);
+		$user->setPassword($password);
+		$user->setMail($mail);
+
 		$sql = "INSERT INTO user (nickname, password, mail) VALUES(?, ?, ?)";
 		$query = $this->dbh->prepare($sql);
 		$query->execute([$user->getNickname(), $user->getPassword(), $user->getMail()]);

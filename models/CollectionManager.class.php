@@ -12,7 +12,7 @@ class CollectionManager
 	{
 		$sql = "SELECT * FROM collection";
 		$query = $this->dbh->prepare($sql);
-		$query->execute($id);
+		$query->execute();
 		$collections = $query->fetchAll(PDO::FETCH_CLASS, 'Collection');
 		return $collections;
 	}
@@ -21,7 +21,7 @@ class CollectionManager
 	{
 		$sql = "SELECT * FROM collection WHERE id = ?";
 		$query = $this->dbh->prepare($sql);
-		$query->execute($id);
+		$query->execute([$id]);
 		$collection = $query->fetchObject('Collection');
 		return $collection;
 	}

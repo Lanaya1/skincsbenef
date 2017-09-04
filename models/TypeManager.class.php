@@ -12,7 +12,7 @@ class TypeManager
 	{
 		$sql = "SELECT * FROM type";
 		$query = $this->dbh->prepare($sql);
-		$query->execute($id);
+		$query->execute();
 		$types = $query->fetchAll(PDO::FETCH_CLASS, 'Type');
 		return $types;
 	}
@@ -21,7 +21,7 @@ class TypeManager
 	{
 		$sql = "SELECT * FROM type WHERE id = ?";
 		$query = $this->dbh->prepare($sql);
-		$query->execute($id);
+		$query->execute([$id]);
 		$type = $query->fetchObject('Type');
 		return $type;
 	}
