@@ -2,10 +2,10 @@
 class Skin
 {
 	private $id;
-	private $idCollection;
-	private $idRarity;
-	private $idType;
-	private $idWeapon;
+	private $id_collection;
+	private $id_rarity;
+	private $id_type;
+	private $id_weapon;
 	private $name;
 	private $price;
 
@@ -15,19 +15,19 @@ class Skin
 	}
 	public function getIdCollection()
 	{
-		return $this->idCollection;
+		return $this->id_collection;
 	}
 	public function getIdRarity()
 	{
-		return $this->idRarity;
+		return $this->id_rarity;
 	}
 	public function getIdType()
 	{
-		return $this->idType;
+		return $this->id_type;
 	}
 	public function getIdWeapon()
 	{
-		return $this->idWeapon;
+		return $this->id_weapon;
 	}
 	public function getName()
 	{
@@ -39,21 +39,21 @@ class Skin
 	}
 
 
-	public function setIdCollection($idCollection)
+	public function setIdCollection($id_collection)
 	{
-		$this->idCollection = $idCollection;
+		$this->id_collection = $id_collection;
 	}
-	public function setIdRarity($idRarity)
+	public function setIdRarity($id_rarity)
 	{
-		$this->idRarity = $idRarity;
+		$this->id_rarity = $id_rarity;
 	}
-	public function setIdType($idType)
+	public function setIdType($id_type)
 	{
-		$this->idType = $idType;
+		$this->id_type = $id_type;
 	}
-	public function setIdWeapon($idWeapon)
+	public function setIdWeapon($id_weapon)
 	{
-		$this->idWeapon = $idWeapon;
+		$this->id_weapon = $id_weapon;
 	}
 	public function setName($name)
 	{

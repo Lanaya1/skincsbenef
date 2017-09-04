@@ -9,9 +9,9 @@ class Collection
 	{
 		return $this->id;
 	}
-	public function getIdType()
+	public function getId_type()
 	{
-		return $this->idType;
+		return $this->id_type;
 	}
 	public function getName()
 	{
@@ -23,9 +23,9 @@ class Collection
 	{
 		$this->name = $name;
 	}
-	public function setIdType($idType)
+	public function setIdType($id_type)
 	{
-		$this->idType = $idType;
+		$this->id_type = $id_type;
 	}
 }
 ?>
