@@ -37,5 +37,21 @@ article {
 
 article p {
 	border-radius: 10px;
-	background-color: red;
+}
+
+article span {
+	display: block;
+	margin-bottom: 10px;
+}
+
+.raritycolor4 {
+	background-color: #8847FF;
+}
+
+.raritycolor3 {
+	background-color: #4B69FF;
+}
+
+.raritycolor2 {
+	background-color: #5E98D9;
 }

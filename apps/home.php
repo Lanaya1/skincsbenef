@@ -10,7 +10,7 @@
 $lastId = 1;
 
 
-$sql = 'SELECT s.id AS id, s.name AS name, s.price AS price, w.name AS weapon, r.name AS rarity, t.name AS type
+$sql = 'SELECT s.id AS id, s.name AS name, s.price AS price, w.name AS weapon, r.name AS rarity, t.name AS type, id_rarity AS id_rarity
 		FROM skin AS s
 		INNER JOIN weapon AS w ON w.id = s.id_weapon
 		INNER JOIN rarity AS r ON r.id = s.id_rarity

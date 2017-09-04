@@ -2,7 +2,8 @@
 
 foreach ($articles as $article) {
 	// Suppresion du 's'
-	$article['type'] = substr($article['type'], 0, -1);
+	$article['type'] = rtrim($article['type'], 's');
+	
 	require('./views/loop_article.phtml');
 }
 

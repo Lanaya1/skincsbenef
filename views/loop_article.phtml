@@ -1,0 +1,10 @@
+<div class="col-md-4">
+	<article>
+		<h3><?= $article['weapon']; ?> | <?= $article['name']; ?></h3>
+		<p class="raritycolor<?= $article['id_rarity'];?>"><?= $article['rarity'];?> <?= $article['type']; ?></p>
+		<img src="./public/img/skins/<?= $article['id'] ?>.png" alt="">
+		<span><?= $article['price'] ?>€</span>
+		<button type="button" class="btn btn-info"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> More information</button>
+		<button type="button" class="btn btn-warning">Add to cart <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></button>
+	</article>
+</div>
