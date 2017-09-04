@@ -2,14 +2,14 @@
 class Collection
 {
 	private $id;
-	private $idType;
+	private $id_type;
 	private $name;
 
 	public function getId()
 	{
 		return $this->id;
 	}
-	public function getId_type()
+	public function getIdType()
 	{
 		return $this->id_type;
 	}
