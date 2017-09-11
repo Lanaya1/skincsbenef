@@ -1,5 +1,5 @@
 <li class="dropdown">
-	<a href="./?page=type&type=<?= $type->getId() ?>"><?= $type->getName() ?><span class="caret"></span></a>
+	<a href="./<?= strtolower($type->getNameS()) ?>"><?= $type->getName() ?><span class="caret"></span></a>
 	<ul class="dropdown-menu">
 		<?php require('./apps/loop_weapon.php'); ?>
 	</ul>

@@ -1,6 +1,6 @@
 <li>
 	<!-- <a href="./weapon/<?= $weapon->getName() ?>"> -->
-	<a href="./?page=weapon&weapon=<?= $weapon->getId() ?>">
+	<a href="./weapon/<?= str_replace(' ', '-', $weapon->getName()) ?>">
 		<img src="./public/img/weapons/<?= $weapon->getId() ?>.png" alt=""><?= $weapon->getName() ?>
 	</a>
 </li>

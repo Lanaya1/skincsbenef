@@ -1,6 +1,6 @@
 <div class="col-md-4">
 	<article>
-		<h3><a href="./?page=weapon&weapon=<?= $article->getWeapon()->getId() ?>"><?= $article->getWeapon()->getName() ?></a> | <?= $article->getName() ?></h3>
+		<h3><a href="./weapon/<?= str_replace(' ', '-', $article->getWeapon()->getName()) ?>"><?= $article->getWeapon()->getName() ?></a> | <?= $article->getName() ?></h3>
 		<a href="./?page=rarity&rarity=<?= $article->getRarity()->getId() ?>"><p class="raritycolor<?= $article->getIdRarity() ?>"><?= $article->getRarity()->getName()?> <?= $article->getType()->getNameS() ?></p></a>
 		<a href="#<?= $article->getId()?>">
   			<img src="./public/img/skins/<?= $article->getId() ?>.png" alt="<?= $article->getWeapon()->getName()?> <?= $article->getName() ?>">

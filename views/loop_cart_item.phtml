@@ -1,5 +1,11 @@
 <li>
+	<img src="./public/img/skins/<?= $item->getId() ?>.png" alt="<?= $item->getWeapon()->getName()?> <?= $item->getName() ?>">
 	<p>
-		<span class="raritycolor<?= $item->getIdRarity() ?>"><?= $item->getWeapon()->getName(), " ", $item->getName(); ?></span>
+		<div class="raritycolor<?= $item->getIdRarity() ?>"><?= $item->getWeapon()->getName(), " ", $item->getName(), $item->quantity ?></div>
+		<?= $item->getPriceD(); ?>
+		<form method="POST">
+			<input type="hidden" name="id_skin" value="<?= $item->getId() ?>">
+			<button name="cart" value="delete" type="submit" class="btn"><span class="glyphicon glyphicon-trash"></span></button>
+		</form>
 	</p>
 </li>

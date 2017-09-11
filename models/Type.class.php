@@ -13,8 +13,7 @@ class Type
 		return $this->name;
 	}
 	public function getNameS() {
-		$this->name = rtrim($this->name, 's');
-		return $this->name;
+		return rtrim($this->name, 's');
 	}
 
 

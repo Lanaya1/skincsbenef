@@ -1,0 +1,54 @@
+RewriteEngine On
+
+
+RewriteRule {.*} index.php?page=$1
+RewriteRule weapon/CZ75-Auto index.php?page=weapon&weapon=1
+RewriteRule weapon/Desert-Eagle index.php?page=weapon&weapon=2
+RewriteRule weapon/Dual-Berettas index.php?page=weapon&weapon=3
+RewriteRule weapon/Five-SeveN index.php?page=weapon&weapon=4
+RewriteRule weapon/Glock-18 index.php?page=weapon&weapon=5
+RewriteRule weapon/P2000 index.php?page=weapon&weapon=6
+RewriteRule weapon/P250 index.php?page=weapon&weapon=7
+RewriteRule weapon/R8-Revolver index.php?page=weapon&weapon=8
+RewriteRule weapon/Tec-9 index.php?page=weapon&weapon=9
+RewriteRule weapon/USP-S index.php?page=weapon&weapon=10
+RewriteRule weapon/AK-47 index.php?page=weapon&weapon=11
+RewriteRule weapon/AUG index.php?page=weapon&weapon=12
+RewriteRule weapon/AWP index.php?page=weapon&weapon=13
+RewriteRule weapon/FAMAS index.php?page=weapon&weapon=14
+RewriteRule weapon/G3SG1 index.php?page=weapon&weapon=15
+RewriteRule weapon/Galil-AR index.php?page=weapon&weapon=16
+RewriteRule weapon/M4A1-S index.php?page=weapon&weapon=17
+RewriteRule weapon/M4A4 index.php?page=weapon&weapon=18
+RewriteRule weapon/SCAR-20 index.php?page=weapon&weapon=19
+RewriteRule weapon/SG-553 index.php?page=weapon&weapon=20
+RewriteRule weapon/SSG-08 index.php?page=weapon&weapon=21
+RewriteRule weapon/MAC-10 index.php?page=weapon&weapon=22
+RewriteRule weapon/MP7 index.php?page=weapon&weapon=23
+RewriteRule weapon/MP9 index.php?page=weapon&weapon=24
+RewriteRule weapon/PP-Bizon index.php?page=weapon&weapon=25
+RewriteRule weapon/P90 index.php?page=weapon&weapon=26
+RewriteRule weapon/MAG-7 index.php?page=weapon&weapon=27
+RewriteRule weapon/Nova index.php?page=weapon&weapon=28
+RewriteRule weapon/Sawed-Off index.php?page=weapon&weapon=29
+RewriteRule weapon/XM1014 index.php?page=weapon&weapon=30
+RewriteRule weapon/M249 index.php?page=weapon&weapon=31
+RewriteRule weapon/Negev index.php?page=weapon&weapon=32
+RewriteRule weapon/Bayonet index.php?page=weapon&weapon=33
+RewriteRule weapon/Bowie-Knife index.php?page=weapon&weapon=34
+RewriteRule weapon/Butterfly-Knife index.php?page=weapon&weapon=35
+RewriteRule weapon/Falchion-Knife index.php?page=weapon&weapon=36
+RewriteRule weapon/Flip-Knife index.php?page=weapon&weapon=37
+RewriteRule weapon/Gut-Knife index.php?page=weapon&weapon=38
+RewriteRule weapon/Huntsman-Knife index.php?page=weapon&weapon=39
+RewriteRule weapon/Karambit index.php?page=weapon&weapon=40
+RewriteRule weapon/M9-Bayonet index.php?page=weapon&weapon=41
+RewriteRule weapon/Shadow-Daggers index.php?page=weapon&weapon=42
+
+RewriteRule pistol index.php?page=type&type=1
+RewriteRule rifle index.php?page=type&type=2
+RewriteRule smg index.php?page=type&type=3
+RewriteRule heavy index.php?page=type&type=4
+RewriteRule knive index.php?page=type&type=5
+
+ErrorDocument 404 http://%{HTTP_HOST}/skincsbenef/skincsbenef/index.php?page=404

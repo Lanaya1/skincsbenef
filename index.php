@@ -6,7 +6,7 @@ $dbh = new PDO('mysql:host=localhost;dbname=skincsbenef', 'root', 'troiswa', [PD
 setlocale(LC_MONETARY, 'en_US.UTF-8');
 $title = "SkinCsBenef";
 
-$access = ['register', 'weapon', 'type', 'rarity', 'collection', 'search'];
+$access = ['register', 'weapon', 'type', 'rarity', 'collection', 'search', '404'];
 
 if (isset($_GET['page']))
 {
@@ -15,15 +15,6 @@ if (isset($_GET['page']))
 		$title .= " - ".$_GET['page'];
 		$page = $_GET['page'];
 	}
-	else
-	{
-		$title .= " - 404";
-		$page = "404";
-	}
-}
-
-else {
-	$page = 'home';
 }
 
 function __autoload($classname) {

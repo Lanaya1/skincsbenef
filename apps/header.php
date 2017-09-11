@@ -13,8 +13,9 @@ if (!empty($_SESSION)) {
 	if (!$order) {
 		$order = $manager->newOrder($user);
 	}
-	$items = $user->getCurrentOrder()->getSkins();
+	$items = $user->getCurrentOrder()->getQuantitySkin();
 	$price = $user->getCurrentOrder()->getTotalPrice();
+	var_dump($items);
 	require('./views/header_connected.phtml');
 }
 else {

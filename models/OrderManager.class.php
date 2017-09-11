@@ -95,7 +95,6 @@ class OrderManager
 
 	public function save(Order $order)
 	{
-
 		$sql = "UPDATE `order` SET status = ? WHERE id = ?";
 		$query = $this->dbh->prepare($sql);
 		$query->execute([$order->getStatus(), $order->getId()]);
