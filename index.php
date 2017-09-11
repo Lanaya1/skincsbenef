@@ -15,6 +15,15 @@ if (isset($_GET['page']))
 		$title .= " - ".$_GET['page'];
 		$page = $_GET['page'];
 	}
+	else
+	{
+		$title .= " - 404";
+		$page = "404";
+	}
+}
+
+else {
+	$page = 'home';
 }
 
 function __autoload($classname) {
