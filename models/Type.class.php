@@ -12,6 +12,10 @@ class Type
 	{
 		return $this->name;
 	}
+	public function getNameS() {
+		$this->name = rtrim($this->name, 's');
+		return $this->name;
+	}
 
 
 	public function setName($name)

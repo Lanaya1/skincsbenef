@@ -1,5 +1,5 @@
 <?php
-class Collection
+class Weapon
 {
 	private $id;
 	private $id_type;

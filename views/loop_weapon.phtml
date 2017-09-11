@@ -1,3 +1,6 @@
 <li>
-	<a href="./weapon/<?= $weapon['name'] ?>"><img src="./public/img/weapons/<?= $weapon['id'] ?>.png" alt=""><?= $weapon['name'] ?></a>
+	<!-- <a href="./weapon/<?= $weapon->getName() ?>"> -->
+	<a href="./?page=weapon&weapon=<?= $weapon->getId() ?>">
+		<img src="./public/img/weapons/<?= $weapon->getId() ?>.png" alt=""><?= $weapon->getName() ?>
+	</a>
 </li>

@@ -17,7 +17,7 @@ class TypeManager
 		return $types;
 	}
 
-	public function findById($id)// OBLIGATOIRE
+	public function findById($id)
 	{
 		$sql = "SELECT * FROM type WHERE id = ?";
 		$query = $this->dbh->prepare($sql);

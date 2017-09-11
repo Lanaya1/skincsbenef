@@ -3,44 +3,44 @@ class UserManager
 {
 	private $dbh;
 
-	public function __construct($db)
+	public function __construct($dbh)
 	{
-		$this->dbhh = $dbh;
+		$this->dbh = $dbh;
 	}
 
 	public function findAll()
 	{
-		$sql = "SELECT * FROM users";
+		$sql = "SELECT * FROM user";
 		$query = $this->dbh->prepare($sql);
 		$query->execute();
-		$users = $query->fetchAll(PDO::FETCH_CLASS, 'User');
+		$users = $query->fetchAll(PDO::FETCH_CLASS, 'User', [$this->dbh]);
 		return $users;
 	}
 
-	public function findById($id)// OBLIGATOIRE
+	public function findById($id)
 	{
-		$sql = "SELECT * FROM users WHERE id = ?";
+		$sql = "SELECT * FROM user WHERE id = ?";
 		$query = $this->dbh->prepare($sql);
 		$query->execute([$id]);
-		$user = $query->fetchObject('User');
+		$user = $query->fetchObject('User', [$this->dbh]);
 		return $user;
 	}
 
 	public function findByNickname($nickname)
 	{
-		$sql = "SELECT * FROM users WHERE nickname = ?";
+		$sql = "SELECT * FROM user WHERE nickname = ?";
 		$query = $this->dbh->prepare($sql);
 		$query->execute([$nickname]);
-		$user = $query->fetchObject('User');
+		$user = $query->fetchObject('User', [$this->dbh]);
 		return $user;
 	}
 
-	public function create($nickname, $password, $mail)
+	public function create($nickname, $password, $passwordBis, $mail)
 	{
-		$user = new User();
+		$user = new User($this->dbh);
 
 		$user->setNickname($nickname);
-		$user->setPassword($password);
+		$user->setPassword($password, $passwordBis);
 		$user->setMail($mail);
 
 		$sql = "INSERT INTO user (nickname, password, mail) VALUES(?, ?, ?)";
@@ -56,6 +56,21 @@ class UserManager
 		$query = $this->dbh->prepare($sql);
 		$query->execute([$user->getNickname(), $user->getPassword(), $user->getMail(), $user->getId()]);
 		return $this->findById($user->getId());
+	}
+
+	public function login($nickname, $password) {
+		$user = $this->findByNickname($nickname);
+		if (!$user)
+			throw new Exception("This nickname does not exist");
+		else if (!password_verify($password, $user->getPassword()))
+			throw new Exception("Wrong password");
+		else 
+			$_SESSION['id'] = $user->getId();
+	}
+
+	public function getCurrentOrder(User $user) {
+		$manager = new OrderManager($dbh);
+		$order = $manager->findCurrentOrderByUser($user);
 	}
 }
 ?>

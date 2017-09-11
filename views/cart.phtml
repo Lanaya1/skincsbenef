@@ -1,0 +1,18 @@
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> <?= $price ?> <span class="caret"></span></a>
+<ul class="dropdown-menu">
+	<li>
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<ul class="cart-items">
+					<?php require('./apps/loop_cart_item.php') ?>
+				</ul>
+			</div>
+			<div class="bottom text-center">
+				<form method="POST" class="form">
+					<button name="action" value="checkOut" class="btn btn-success btn-block">Process to check out</button>
+					<button name="action" value="resetCart" class="btn btn-danger btn-block">Delete all items</button>
+				</form>
+			</div>
+	 	</div>
+	</li>
+</ul>

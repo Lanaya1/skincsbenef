@@ -17,7 +17,7 @@ class RarityManager
 		return $raritys;
 	}
 
-	public function findById($id)// OBLIGATOIRE
+	public function findById($id)
 	{
 		$sql = "SELECT * FROM rarity WHERE id = ?";
 		$query = $this->dbh->prepare($sql);

@@ -4,6 +4,8 @@ class Collection
 	private $id;
 	private $name;
 
+	
+
 	public function getId()
 	{
 		return $this->id;

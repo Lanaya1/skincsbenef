@@ -1,10 +1,21 @@
 <div class="col-md-4">
 	<article>
-		<h3><?= $article['weapon']; ?> | <?= $article['name']; ?></h3>
-		<p class="raritycolor<?= $article['id_rarity'];?>"><?= $article['rarity'];?> <?= $article['type']; ?></p>
-		<img src="./public/img/skins/<?= $article['id'] ?>.png" alt="">
-		<span><?= $article['price'] ?>€</span>
+		<h3><a href="./?page=weapon&weapon=<?= $article->getWeapon()->getId() ?>"><?= $article->getWeapon()->getName() ?></a> | <?= $article->getName() ?></h3>
+		<a href="./?page=rarity&rarity=<?= $article->getRarity()->getId() ?>"><p class="raritycolor<?= $article->getIdRarity() ?>"><?= $article->getRarity()->getName()?> <?= $article->getType()->getNameS() ?></p></a>
+		<a href="#<?= $article->getId()?>">
+  			<img src="./public/img/skins/<?= $article->getId() ?>.png" alt="<?= $article->getWeapon()->getName()?> <?= $article->getName() ?>">
+		</a>
+		<a href="#" class="lightbox" id="<?= $article->getId()?>">
+  			<img src="./public/img/skins/<?= $article->getId() ?>.png">
+		</a>
+		<span><?= $article->getPriceD()?></span>
+		<a href="./?page=collection&collection=<?= $article->getCollection()->getId() ?>" class="collection"><img src="./public/img/collections/<?= $article->getCollection()->getId() ?>.png" alt=""><p>Collection <?= $article->getCollection()->getName() ?></p></a>
+
+
 		<button type="button" class="btn btn-info"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> More information</button>
-		<button type="button" class="btn btn-warning">Add to cart <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></button>
+		<form method="POST" class="form">
+			<input type="hidden" class="form-control" name="id_skin" value="<?= $article->getId() ?>">
+			<button name="cart" value="add" type="submit" class="btn btn-warning cart">Add to cart <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></button>
+		</form>
 	</article>
 </div>
