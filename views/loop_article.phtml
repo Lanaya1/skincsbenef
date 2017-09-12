@@ -2,10 +2,10 @@
 	<article>
 		<h3><a href="./weapon/<?= str_replace(' ', '-', $article->getWeapon()->getName()) ?>"><?= $article->getWeapon()->getName() ?></a> | <?= $article->getName() ?></h3>
 		<a href="./rarity/<?= strtolower(str_replace(' ', '-',$article->getRarity()->getName())) ?>"><p class="raritycolor<?= $article->getIdRarity() ?>"><?= $article->getRarity()->getName()?> <?= $article->getType()->getNameS() ?></p></a>
-		<a href="#<?= $article->getId()?>">
+		<a href="<?=$_SERVER['REQUEST_URI']?>#<?= $article->getId()?>">
   			<img src="./public/img/skins/<?= $article->getId() ?>.png" alt="<?= $article->getWeapon()->getName()?> <?= $article->getName() ?>">
 		</a>
-		<a href="#" class="lightbox" id="<?= $article->getId()?>">
+		<a href="<?=$_SERVER['REQUEST_URI']?>#" class="lightbox" id="<?= $article->getId()?>">
   			<img src="./public/img/skins/<?= $article->getId() ?>.png">
 		</a>
 		<span><?= $article->getPriceD()?></span>

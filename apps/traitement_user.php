@@ -17,7 +17,7 @@ if (isset($_POST['action']))
 	}
 	else if ($action == 'register')
 	{
-		if (isset($_POST['nickname'], $_POST['password'], $_POST['mail']))
+		if (isset($_POST['nickname'], $_POST['password'], $_POST['password_confirmation'], $_POST['mail']))
 		{
 			$manager = new UserManager($dbh);
 			try {
@@ -33,6 +33,8 @@ if (isset($_POST['action']))
 	{
 		$_SESSION = [];
 		session_destroy();
+		header('Location: index.php');
+		exit;
 	}
 }
 ?>

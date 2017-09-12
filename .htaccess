@@ -1,7 +1,14 @@
 RewriteEngine On
 
 
+#RewriteRule {.*} index.php?page=$1 [L,QSA]
+#RewriteRule {.*}/{.*} index.php?page=$1&info=$2
+#RewriteRule {.*}/{.*}/{.*} index.php?page=$1&info=$2&truc=$3
+#RewriteRule {.*}/{.*}/{.*}/{.*} index.php?page=$1&info=$2&truc=$3&bidule=$4
+
+
 RewriteRule {.*} index.php?page=$1
+#RewriteRule weapon/{.*} index.php?page=weapon&weapontitle=$1
 RewriteRule weapon/CZ75-Auto index.php?page=weapon&weapon=1
 RewriteRule weapon/Desert-Eagle index.php?page=weapon&weapon=2
 RewriteRule weapon/Dual-Berettas index.php?page=weapon&weapon=3

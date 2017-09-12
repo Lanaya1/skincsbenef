@@ -48,7 +48,6 @@ class Order
 		if ($this->skins === null) {
 			$manager = new SkinManager($this->dbh);
 			$this->skins = $manager->findQuantityByOrder($this);
-			var_dump($this->skins);
 		}
 
 		return $this->skins;

@@ -84,6 +84,17 @@ class SkinManager
 		$skins = $query->fetchAll(PDO::FETCH_CLASS, 'Skin', [$this->dbh]);
 		return $skins;
 	}
+/*
+	search($params)
+	{
+		$sql = "SELECT * FROM skins WHERE ";
+		if (isset($params['type']))
+		{
+			$sql .= "truc=?";
+			$prep[] = $params['type'];
+		}
 
+	}
+*/
 }
 ?>
