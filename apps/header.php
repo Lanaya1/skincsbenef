@@ -1,5 +1,4 @@
 <?php
-var_dump($_SESSION);
 if (!empty($error)) {
 	echo $error;
 }
@@ -15,7 +14,6 @@ if (!empty($_SESSION)) {
 	}
 	$items = $user->getCurrentOrder()->getQuantitySkin();
 	$price = $user->getCurrentOrder()->getTotalPrice();
-	var_dump($items);
 	require('./views/header_connected.phtml');
 }
 else {
