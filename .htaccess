@@ -51,4 +51,19 @@ RewriteRule smg index.php?page=type&type=3
 RewriteRule heavy index.php?page=type&type=4
 RewriteRule knive index.php?page=type&type=5
 
+RewriteRule rarity/covert index.php?page=rarity&rarity=6
+RewriteRule rarity/classified index.php?page=rarity&rarity=5
+RewriteRule rarity/restricted index.php?page=rarity&rarity=4
+RewriteRule rarity/mil-spec index.php?page=rarity&rarity=3
+RewriteRule rarity/industrial-grade index.php?page=rarity&rarity=2
+RewriteRule rarity/consumer-grade index.php?page=rarity&rarity=1
+
+RewriteRule collection/gamma index.php?page=collection&collection=6
+RewriteRule collection/chroma-3 index.php?page=collection&collection=5
+RewriteRule collection/operation-hydra index.php?page=collection&collection=4
+RewriteRule collection/cobblestone index.php?page=collection&collection=3
+RewriteRule collection/chop-shop index.php?page=collection&collection=2
+RewriteRule collection/cache index.php?page=collection&collection=1
+
+
 ErrorDocument 404 http://%{HTTP_HOST}/skincsbenef/skincsbenef/index.php?page=404

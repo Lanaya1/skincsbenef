@@ -11,7 +11,7 @@ zalu c le projé 2 la 3wa ^^^
 - fixer le bug quand on clique sur les images
 - fixer le htaccess :))))
 - faire page "more information"
-- htaccess rarity article
+- [x] htaccess rarity article
 - regler css
 - quand on ajoute au panier reprendre l'ancienne quantité (on peut seulement en avoir 2 maximum du coup)
 - calculer le total du panier avec la quantité

@@ -1,1 +1,1 @@
-<li><a href="./?page=collection&collection=<?= $collection->getId() ?>"><?= $collection->getName() ?></a></li>
+<li><a href="./collection/<?= strtolower(str_replace(' ', '-',$collection->getName())) ?>"><?= $collection->getName() ?></a></li>
